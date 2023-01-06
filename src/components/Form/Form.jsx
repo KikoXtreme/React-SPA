@@ -1,8 +1,10 @@
-import './forms.css';
+import './form.css';
 
-export const Forms = () => {
+export const Form = () => {
 
     const onSubmit = (e) => {
+        e.preventDefault();
+
         console.log(e.target);
     }
 
@@ -10,7 +12,7 @@ export const Forms = () => {
         <section id="register-page">
             <form className="register" onSubmit={onSubmit}>
                 <div className="container">
-                    <h1>Register</h1>
+                    <h1>React SPA Form</h1>
                     <p className="field field-icon">
                         <label htmlFor="username"><span><i className="fas fa-user-astronaut"></i></span></label>
                         <input
