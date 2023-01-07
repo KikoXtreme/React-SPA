@@ -32,6 +32,15 @@
 }
 
 .register select {
+    flex: 0 1 100%;
+    border: 1px solid;
+    padding: 0.3em;
+    border-left: 0.3em solid green;
+    border-top-right-radius: 1.5em;
+    border-bottom-right-radius: 1.5em;
+}
+
+.register select {
     border-color: black;
 }
 
@@ -87,9 +96,5 @@
 }
 
 #register-page .input-error {
-    border-left-color: red;
-}
-
-#login-page .input-error {
     border-left-color: red;
 }
