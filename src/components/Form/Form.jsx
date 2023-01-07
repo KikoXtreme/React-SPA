@@ -9,10 +9,8 @@ export const Form = () => {
         password: '',
         age: '',
         gender: 'f',
-        // userType: 'corporate',
-        // tac: false,
-        // egn: '',
-        // eik: '',
+        userType: 'individual',
+        tac: false,
     });
 
     const changeHandler = (e) => {
@@ -31,14 +29,16 @@ export const Form = () => {
         const password = formData.get('password');
         const age = formData.get('age');
         const gender = formData.get('gender');
-        // const country = formData.get('country');
-
+        const userType = formData.get('userType');
+        const tac = formData.get('tac');
 
         console.log(username);
         console.log(email);
         console.log(password);
         console.log(age);
         console.log(gender);
+        console.log(userType);
+        console.log(tac);
     }
 
     const validateUsername = (e) => {
@@ -99,13 +99,27 @@ export const Form = () => {
         }));
     }
 
+    const validateTac = (e) => {
+        // const tac = e.target.value;
+        let errorTacMsg = '';
+
+        if (values.tac === false) {
+            errorTacMsg = 'Please click on the checkbox to continue';
+        }
+
+        setError(state => ({
+            ...state,
+            errorTacMsg,
+        }));
+    }
+
     return (
-        <section id="register-page">
+        <section id="form-page">
             <form className="register" onSubmit={onSubmit}>
                 <div className="container">
                     <h1>React SPA Form</h1>
 
-                    <p className="field field-icon">
+                    <p className="field">
                         <label htmlFor="username"><span><i className="fas fa-user-astronaut"></i></span></label>
                         <input
                             className={error.errorUserMsg ? "input-error" : null}
@@ -118,7 +132,7 @@ export const Form = () => {
                     </p>
                     {error.errorUserMsg && <div className="errors">{error.errorUserMsg}</div>}
 
-                    <p className="field field-icon">
+                    <p className="field">
                         <label htmlFor="email"><span><i className="fas fa-at"></i></span></label>
                         <input
                             className={error.errorEmailMsg ? "input-error" : null}
@@ -131,7 +145,7 @@ export const Form = () => {
                     </p>
                     {error.errorEmailMsg && <div className="errors">{error.errorEmailMsg}</div>}
 
-                    <p className="field field-icon">
+                    <p className="field">
                         <label htmlFor="password"><span><i className="fas fa-lock"></i></span></label>
                         <input
                             className={error.errorPassMsg ? "input-error" : null}
@@ -144,7 +158,7 @@ export const Form = () => {
                     </p>
                     {error.errorPassMsg && <div className="errors">{error.errorPassMsg}</div>}
 
-                    <p className="field field-icon">
+                    <p className="field">
                         <label htmlFor="age"><span><i className="fa-solid fa-arrow-down-1-9"></i></span></label>
                         <input
                             className={error.errorAgeMsg ? "input-error" : null}
@@ -157,7 +171,7 @@ export const Form = () => {
                     </p>
                     {error.errorAgeMsg && <div className="errors">{error.errorAgeMsg}</div>}
 
-                    <p className="field field-icon">
+                    <p className="field">
                         <label htmlFor="gender"><span><i className="fa-solid fa-venus-mars"></i></span></label>
                         <select
                             className="null"
@@ -171,8 +185,8 @@ export const Form = () => {
                         </select>
                     </p>
 
-                    <p className="field field-icon">
-                        <label htmlFor="individual-user-type"><span><i className="fas fa-user-astronaut"></i></span>adf</label>
+                    <p className="field">
+                        <label htmlFor="individual-user-type"><span><i className="fas fa-user-astronaut"></i></span>Individual:</label>
                         <input
                             type="radio"
                             name="userType"
@@ -181,7 +195,7 @@ export const Form = () => {
                             onChange={changeHandler}
                             checked={values.userType === 'individual'}
                         />
-                        
+
                         <label htmlFor="corporate-user-type"><span><i className="fas fa-user-astronaut"></i></span>Corporate:</label>
                         <input
                             type="radio"
@@ -193,14 +207,21 @@ export const Form = () => {
                         />
                     </p>
 
-
-
-
-                    {/* <input className="btn submit" type="submit" defaultValue="Register" /> */}
-                    <button type='submit'>Create Account</button>
-                    <p className="text-center">
-                        {/* <span>Already registered? <Link to="/users/login">Log In</Link></span> */}
+                    <p className="field">
+                        <label htmlFor="tac">React SPA Form Terms and Conditions:</label>
+                        <input
+                            // className={error.errorTacMsg ? "input-error" : null}
+                            type="checkbox"
+                            name="tac"
+                            id="tac"
+                            checked={values.tac}
+                            onChange={changeHandler}
+                            onBlur={validateTac}
+                        />
                     </p>
+                    {error.errorTacMsg && <div className="errors">{error.errorTacMsg}</div>}
+
+                    <button type='submit' disabled={!values.tac}>Submit Form</button>
                 </div>
             </form>
         </section>
