@@ -160,7 +160,7 @@ export const Form = () => {
                     <p className="field field-icon">
                         <label htmlFor="gender"><span><i className="fa-solid fa-venus-mars"></i></span></label>
                         <select
-                            className={error.errorRepassMsg ? "input-error" : null}
+                            className="null"
                             name="gender"
                             id="gender"
                             value={values.gender}
@@ -170,9 +170,33 @@ export const Form = () => {
                             <option value="f">Female</option>
                         </select>
                     </p>
+
+                    <p className="field field-icon">
+                        <label htmlFor="individual-user-type"><span><i className="fas fa-user-astronaut"></i></span>adf</label>
+                        <input
+                            type="radio"
+                            name="userType"
+                            value="individual"
+                            id="individual-user-type"
+                            onChange={changeHandler}
+                            checked={values.userType === 'individual'}
+                        />
+                        
+                        <label htmlFor="corporate-user-type"><span><i className="fas fa-user-astronaut"></i></span>Corporate:</label>
+                        <input
+                            type="radio"
+                            name="userType"
+                            value="corporate"
+                            id="corporate-user-type"
+                            onChange={changeHandler}
+                            checked={values.userType === 'corporate'}
+                        />
+                    </p>
+
+
+
+
                     {/* <input className="btn submit" type="submit" defaultValue="Register" /> */}
-
-
                     <button type='submit'>Create Account</button>
                     <p className="text-center">
                         {/* <span>Already registered? <Link to="/users/login">Log In</Link></span> */}

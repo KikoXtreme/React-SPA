@@ -40,10 +40,6 @@
     border-bottom-right-radius: 1.5em;
 }
 
-.register select {
-    border-color: black;
-}
-
 .register button {
     color: white;
     font-weight: bold;
