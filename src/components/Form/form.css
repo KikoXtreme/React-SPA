@@ -1,11 +1,11 @@
 /* form */
 .register {
     width: 400px;
-    margin: 2em auto 0;
+    margin: 1em auto 1em;
     text-align: center;
     padding: 0.9em;
     background-color: whitesmoke;
-    box-shadow: 0 0 3em 0 rgb(255, 255, 255);
+    box-shadow: 0 0 5em 0 rgb(255, 255, 255);
     border-radius: 1.5em;
     border: .1em solid rgb(255, 255, 255);
 }
@@ -86,6 +86,14 @@
 .register .field {
     display: flex;
     padding-bottom: 0;
+}
+
+.fa-users{
+    border-radius: 1.5em;
+    border: 1px solid;
+    border-right: none;
+    padding: 0.55em;
+    background-color: #e9ecef;
 }
 
 /* errors  */

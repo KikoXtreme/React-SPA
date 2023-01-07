@@ -8,8 +8,8 @@ export const Form = () => {
         email: '',
         password: '',
         age: '',
-        gender: 'f',
-        userType: 'individual',
+        gender: 'm',
+        userType: 'user',
         tac: false,
     });
 
@@ -31,6 +31,7 @@ export const Form = () => {
         const gender = formData.get('gender');
         const userType = formData.get('userType');
         const tac = formData.get('tac');
+        const date = formData.get('date');
 
         console.log(username);
         console.log(email);
@@ -39,6 +40,7 @@ export const Form = () => {
         console.log(gender);
         console.log(userType);
         console.log(tac);
+        console.log(date);
     }
 
     const validateUsername = (e) => {
@@ -110,6 +112,20 @@ export const Form = () => {
         setError(state => ({
             ...state,
             errorTacMsg,
+        }));
+    }
+
+    const validateDate = (e) => {
+        const date = e.target.value;
+        let errorDateMsg = '';
+
+        if (date === '') {
+            errorDateMsg = 'Date is required';
+        }
+
+        setError(state => ({
+            ...state,
+            errorDateMsg,
         }));
     }
 
@@ -186,24 +202,47 @@ export const Form = () => {
                     </p>
 
                     <p className="field">
-                        <label htmlFor="individual-user-type"><span><i className="fas fa-user-astronaut"></i></span>Individual:</label>
+                        <label htmlFor="date"><span><i className="fa-solid fa-calendar-days"></i></span></label>
+                        <input
+                            className={error.errorDateMsg ? "input-error" : null}
+                            type="date"
+                            name="date"
+                            id="date"
+                            placeholder="date"
+                            onBlur={validateDate}
+                        />
+                    </p>
+                    {error.errorDateMsg && <div className="errors">{error.errorDateMsg}</div>}
+
+                    <p className="field">
+                        <label htmlFor="avatar"><span><i className="fa-solid fa-file-image"></i></span></label>
+                        <input
+                            type="file"
+                            id="avatar"
+                            name="avatar"
+                            accept="image/png, image/jpeg"
+                        />
+                    </p>
+
+                    <p className="field">
+                        <label htmlFor="user-user-type">Logged User</label>
                         <input
                             type="radio"
                             name="userType"
-                            value="individual"
-                            id="individual-user-type"
+                            value="user"
+                            id="user-user-type"
                             onChange={changeHandler}
-                            checked={values.userType === 'individual'}
+                            checked={values.userType === 'user'}
                         />
 
-                        <label htmlFor="corporate-user-type"><span><i className="fas fa-user-astronaut"></i></span>Corporate:</label>
+                        <label htmlFor="guest-user-type">Guest User</label>
                         <input
                             type="radio"
                             name="userType"
-                            value="corporate"
-                            id="corporate-user-type"
+                            value="guest"
+                            id="guest-user-type"
                             onChange={changeHandler}
-                            checked={values.userType === 'corporate'}
+                            checked={values.userType === 'guest'}
                         />
                     </p>
 
