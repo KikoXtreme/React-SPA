@@ -1,8 +1,15 @@
 import { useState } from 'react';
+import { submit } from '../../services/Submit';
 import './form.css';
 
 export const Form = () => {
     const [error, setError] = useState({});
+    const [user, setUser] = useState([]);
+
+    const userLogin = (userData) => {
+        setUser(userData);
+    }
+
     const [values, setValues] = useState({
         username: '',
         email: '',
@@ -41,6 +48,11 @@ export const Form = () => {
         console.log(userType);
         console.log(tac);
         console.log(date);
+
+        submit(username, email, age, gender, userType, tac, date)
+            .then(userData => {
+                userLogin(userData);
+            })
     }
 
     const validateUsername = (e) => {
