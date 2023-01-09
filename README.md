@@ -8,18 +8,19 @@ All fields have to be validated in order to be sent to a post bin service.
 
 ## Form Inputs
 
-Username - The usernameasfgsfedeafsgfd
-Email -= asddfgfafdsf
-Password - esrgefefesrgdtf
-Age - esrgdrgfewdfesrd
-Gender - adsgfdfgfda
-Date - Date is only required as a validation
-Time - Time is only required as a validation
-File
-Radio button - Only one option is available
-Checkbox - Is you don't check the field, the Submit button is disabled and you can't submit the form.
+Username - The username must be between 3 and 10 characters \
+Email - At least 3 characters, @ symbol, gmail, yahoo or abv, dot(.) and ending with bg or com (.{3,}@(gmail|yahoo|abv)\.(bg|com)$) \
+Password - Password must be at least 3 characters long \
+Age - User must be at least 18 years old\
+Gender - Dropdown field with 2 options (male/female) \
+Date - Date is only required as a validation \
+Time - Time is only required as a validation \
+File - Upload user picture or avater, it is not mandatory\
+Radio button - Only one option is available (user/guest) \
+Checkbox - Is you don't check the field, the Submit button is disabled and you can't submit the form. \
 
-post bin service:
+The submition was sent to post bin service: webhook \ 
+Used url in the project: https://webhook.site/ee43433e-f646-4057-8cde-c75a788321dc \
 
 ## Getting Started with Create React App
 
