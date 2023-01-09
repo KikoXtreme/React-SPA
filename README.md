@@ -4,6 +4,22 @@
 
 This is a Single Page Application (SPA) project.
 The project is one page and contains HTML input fields.
+All fields have to be validated in order to be sent to a post bin service.
+
+## Form Inputs
+
+Username - The usernameasfgsfedeafsgfd
+Email -= asddfgfafdsf
+Password - esrgefefesrgdtf
+Age - esrgdrgfewdfesrd
+Gender - adsgfdfgfda
+Date - Date is only required as a validation
+Time - Time is only required as a validation
+File
+Radio button - Only one option is available
+Checkbox - Is you don't check the field, the Submit button is disabled and you can't submit the form.
+
+post bin service:
 
 ## Getting Started with Create React App
 
