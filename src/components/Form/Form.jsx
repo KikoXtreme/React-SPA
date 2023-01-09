@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { sendUserData } from '../../services/Submit';
-import './form.css';
 import { validateAge, validateDate, validateEmail, validatePassword, validateTime, validateUsername } from './Validations';
+import './form.css';
 
 export const Form = () => {
     const [error, setError] = useState({});
@@ -37,7 +37,7 @@ export const Form = () => {
 
     return (
         <section id="form-page">
-            <form className="register" onSubmit={onSubmit}>
+            <form className="form" onSubmit={onSubmit}>
                 <div className="container">
                     <h1>React SPA Form</h1>
 

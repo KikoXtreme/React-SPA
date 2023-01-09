@@ -1,20 +1,25 @@
-import { Form } from '../components/Form/Form'
-import { ReactDOM } from 'react-dom/client';
+import { cleanup, render, screen } from '@testing-library/react';
+import {Form} from '../components/Form/Form';
 
-// describe('First tests', () => {
-//     it('Should pass always', () => {
-//         expect(true).toBe(true);
-//     })
+const result = {
+    value: 'KikoXtreme'
+};
 
-//     it('two plus two is four', () => {
-//         expect(2 + 2).toBe(4);
-//     });
-// })
+afterEach(cleanup);
 
-it('two plus two is four', () => {
-    const root = ReactDOM.createRoot(document.createElement('p'));
-    root.render(<Form text='Kiko' />)
-
-    expect(2 + 2).toBe(4);
+beforeEach(() => {
+    jest.spyOn(global, "fetch").mockImplementation(() =>
+        Promise.resolve({
+            json: () => Promise.resolve(result)
+        })
+    );
 });
 
+test('Show fetched joke', async () => {
+
+    render(<Form />);
+
+    const element = await screen.findByText(result.value);
+
+    expect(element).toBeInTheDocument();
+});

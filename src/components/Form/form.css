@@ -1,5 +1,5 @@
 /* form */
-.register {
+.form {
     width: 400px;
     margin: 1em auto 1em;
     text-align: center;
@@ -10,18 +10,18 @@
     border: .1em solid rgb(255, 255, 255);
 }
 
-.register h1 {
+.form h1 {
     padding-top: 0;
     border-bottom: none;
     font-weight: bold;
 }
 
-.register p {
+.form p {
     padding-bottom: 0;
     padding-top: 1.5rem;
 }
 
-.register input {
+.form input {
     flex: 0 1 100%;
     border: 1px solid;
     padding: 0.3em;
@@ -30,7 +30,7 @@
     border-bottom-right-radius: 1.5em;
 }
 
-.register select {
+.form select {
     flex: 0 1 100%;
     border: 1px solid;
     padding: 0.3em;
@@ -39,7 +39,7 @@
     border-bottom-right-radius: 1.5em;
 }
 
-.register button {
+.form button {
     color: white;
     font-weight: bold;
     border: none;
@@ -51,17 +51,17 @@
     background: linear-gradient(0deg, rgb(12, 0, 182) 0%, rgb(99, 169, 200) 35%, rgb(1, 17, 20) 100%);
 }
 
-.register button:hover {
+.form button:hover {
     color: yellow;
     cursor: pointer;
 }
 
-.register button:disabled {
+.form button:disabled {
     color: white;
     cursor: not-allowed;
 }
 
-.register i {
+.form i {
     border: 1px solid;
     border-right: none;
     padding: 0.55em;
@@ -70,20 +70,20 @@
     background-color: #e9ecef;
 }
 
-.register a {
+.form a {
     color: #007bff;
 }
 
-.register a:hover {
+.form a:hover {
     cursor: pointer;
     color: darkblue;
 }
 
-.register .country {
+.form .country {
     padding-right: 0.8em;
 }
 
-.register .field {
+.form .field {
     display: flex;
     padding-bottom: 0;
 }
