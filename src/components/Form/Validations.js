@@ -56,19 +56,6 @@ export const validateAge = (e, setError) => {
     }));
 }
 
-// export const validateTac = (e, setError) => {
-//     let errorTacMsg = '';
-
-//     if (e.target.value === false) {
-//         errorTacMsg = 'Please click on the checkbox to continue';
-//     }
-
-//     setError(state => ({
-//         ...state,
-//         errorTacMsg,
-//     }));
-// }
-
 export const validateDate = (e, setError) => {
     const date = e.target.value;
     let errorDateMsg = '';
@@ -80,5 +67,19 @@ export const validateDate = (e, setError) => {
     setError(state => ({
         ...state,
         errorDateMsg,
+    }));
+}
+
+export const validateTime = (e, setError) => {
+    const time = e.target.value;
+    let errorTimeMsg = '';
+
+    if (time === '') {
+        errorTimeMsg = 'Time is required';
+    }
+
+    setError(state => ({
+        ...state,
+        errorTimeMsg,
     }));
 }

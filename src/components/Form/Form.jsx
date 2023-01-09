@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { sendUserData } from '../../services/Submit';
 import './form.css';
-import { validateAge, validateDate, validateEmail, validatePassword, validateTac, validateUsername } from './Validations';
+import { validateAge, validateDate, validateEmail, validatePassword, validateTime, validateUsername } from './Validations';
 
 export const Form = () => {
     const [error, setError] = useState({});
@@ -14,7 +14,7 @@ export const Form = () => {
         age: '',
         gender: 'm',
         userType: 'user',
-        tac: false,
+        tac: '',
     });
 
     const changeHandler = (e) => {
@@ -26,26 +26,6 @@ export const Form = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        // const formData = new FormData(e.target);
-        // const username = formData.get('username');
-        // const email = formData.get('email');
-        // const password = formData.get('password');
-        // const age = formData.get('age');
-        // const gender = formData.get('gender');
-        // const userType = formData.get('userType');
-        // const tac = formData.get('tac');
-        // const date = formData.get('date');
-        // const userData = {
-        //     username,
-        //     email,
-        //     password,
-        //     age,
-        //     gender,
-        //     userType,
-        //     tac,
-        //     date
-        // }
-
         const userData = Object.fromEntries(new FormData(e.target));
 
         await sendUserData(userData)
@@ -141,6 +121,19 @@ export const Form = () => {
                     {error.errorDateMsg && <div className="errors">{error.errorDateMsg}</div>}
 
                     <p className="field">
+                        <label htmlFor="time"><span><i className="fa-sharp fa-solid fa-clock"></i></span></label>
+                        <input
+                            className={error.errorTimeMsg ? "input-error" : null}
+                            type="time"
+                            name="time"
+                            id="time"
+                            placeholder="time"
+                            onBlur={(e) => validateTime(e, setError)}
+                        />
+                    </p>
+                    {error.errorTimeMsg && <div className="errors">{error.errorTimeMsg}</div>}
+
+                    <p className="field">
                         <label htmlFor="avatar"><span><i className="fa-solid fa-file-image"></i></span></label>
                         <input
                             type="file"
@@ -175,13 +168,11 @@ export const Form = () => {
                     <p className="field">
                         <label htmlFor="tac">React SPA Form Terms and Conditions:</label>
                         <input
-                            // className={error.errorTacMsg ? "input-error" : null}
                             type="checkbox"
                             name="tac"
                             id="tac"
                             checked={values.tac}
                             onChange={changeHandler}
-                            // onBlur={(e) => validateTac(e, setError)}
                         />
                     </p>
                     {error.errorTacMsg && <div className="errors">{error.errorTacMsg}</div>}
