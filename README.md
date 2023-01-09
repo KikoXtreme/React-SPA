@@ -23,9 +23,9 @@ Checkbox (checkbox)
 
 If the field is valid a green bar is shown between the icon (fontawesome) and the input field. \
 If the field is not valid the bar is red and a red text is shown below with the specific field requirement. \
-The last field is checkbox with Terms and Conditions and if it is not checked the Submib button is disabled.
+The last field is checkbox with Terms and Conditions and if it is not checked the Submit button is disabled.
 
-Username - The username must be between 3 and 10 characters \
+Username - Username must be between 3 and 10 characters \
 Email - At least 3 characters, @ symbol, gmail, yahoo or abv, dot(.) and ending with bg or com \
 Password - Password must be at least 3 characters long \
 Age - User must be at least 18 years old\
@@ -36,8 +36,10 @@ File - Upload user picture or avater, it is not mandatory\
 Radio button - Only one option is available (user/guest) \
 Checkbox - Is you don't check the field, the Submit button is disabled and you can't submit the form. 
 
-The submition was sent to post bin service: webhook \
-Used url in the project: https://webhook.site/ee43433e-f646-4057-8cde-c75a788321dc
+## Submition
+
+The submition was sent to post bin service: Webhook.site \
+Url: https://webhook.site/ee43433e-f646-4057-8cde-c75a788321dc
 
 ## Create React App and Available Scripts
 
