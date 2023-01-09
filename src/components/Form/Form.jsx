@@ -1,14 +1,11 @@
 import { useState } from 'react';
-import { submit } from '../../services/Submit';
+import { sendUserData } from '../../services/Submit';
 import './form.css';
+import { validateAge, validateDate, validateEmail, validatePassword, validateTac, validateUsername } from './Validations';
 
 export const Form = () => {
     const [error, setError] = useState({});
     const [user, setUser] = useState([]);
-
-    const userLogin = (userData) => {
-        setUser(userData);
-    }
 
     const [values, setValues] = useState({
         username: '',
@@ -27,118 +24,35 @@ export const Form = () => {
         }));
     };
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
-        // const userData = Object.fromEntries(new FormData(e.target));
-        const formData = new FormData(e.target);
-        const username = formData.get('username');
-        const email = formData.get('email');
-        const password = formData.get('password');
-        const age = formData.get('age');
-        const gender = formData.get('gender');
-        const userType = formData.get('userType');
-        const tac = formData.get('tac');
-        const date = formData.get('date');
+        // const formData = new FormData(e.target);
+        // const username = formData.get('username');
+        // const email = formData.get('email');
+        // const password = formData.get('password');
+        // const age = formData.get('age');
+        // const gender = formData.get('gender');
+        // const userType = formData.get('userType');
+        // const tac = formData.get('tac');
+        // const date = formData.get('date');
+        // const userData = {
+        //     username,
+        //     email,
+        //     password,
+        //     age,
+        //     gender,
+        //     userType,
+        //     tac,
+        //     date
+        // }
 
-        console.log(username);
-        console.log(email);
-        console.log(password);
-        console.log(age);
-        console.log(gender);
-        console.log(userType);
-        console.log(tac);
-        console.log(date);
+        const userData = Object.fromEntries(new FormData(e.target));
 
-        submit(username, email, age, gender, userType, tac, date)
-            .then(userData => {
-                userLogin(userData);
+        await sendUserData(userData)
+            .then(result => {
+                setUser(result)
+                console.log(result)
             })
-    }
-
-    const validateUsername = (e) => {
-        const username = e.target.value;
-        let errorUserMsg = '';
-
-        if (username.length < 3) {
-            errorUserMsg = 'Username must be at least 3 characters long';
-        } else if (username.length > 10) {
-            errorUserMsg = 'Username must be at max 10 characters long';
-        }
-
-        setError(state => ({
-            ...state,
-            errorUserMsg,
-        }));
-    }
-
-    const validateEmail = (e) => {
-        const email = e.target.value;
-        let errorEmailMsg = '';
-
-        if (!/.{3,}@(gmail|yahoo|abv)\.(bg|com)$/.test(email)) {
-            errorEmailMsg = 'Please enter valid email';
-        }
-
-        setError(state => ({
-            ...state,
-            errorEmailMsg,
-        }));
-    }
-
-    const validatePassword = (e) => {
-        const password = e.target.value;
-        let errorPassMsg = '';
-
-        if (password.length < 3) {
-            errorPassMsg = 'Password must be at least 3 characters long';
-        }
-
-        setError(state => ({
-            ...state,
-            errorPassMsg,
-        }));
-    }
-
-    const validateAge = (e) => {
-        const age = e.target.value;
-        let errorAgeMsg = '';
-
-        if (age < 18) {
-            errorAgeMsg = 'User must be at least 18 years old';
-        }
-
-        setError(state => ({
-            ...state,
-            errorAgeMsg,
-        }));
-    }
-
-    const validateTac = (e) => {
-        // const tac = e.target.value;
-        let errorTacMsg = '';
-
-        if (values.tac === false) {
-            errorTacMsg = 'Please click on the checkbox to continue';
-        }
-
-        setError(state => ({
-            ...state,
-            errorTacMsg,
-        }));
-    }
-
-    const validateDate = (e) => {
-        const date = e.target.value;
-        let errorDateMsg = '';
-
-        if (date === '') {
-            errorDateMsg = 'Date is required';
-        }
-
-        setError(state => ({
-            ...state,
-            errorDateMsg,
-        }));
     }
 
     return (
@@ -155,7 +69,7 @@ export const Form = () => {
                             name="username"
                             id="username"
                             placeholder="Username"
-                            onBlur={validateUsername}
+                            onBlur={(e) => validateUsername(e, setError)}
                         />
                     </p>
                     {error.errorUserMsg && <div className="errors">{error.errorUserMsg}</div>}
@@ -168,7 +82,7 @@ export const Form = () => {
                             id="email"
                             name="email"
                             placeholder="kiril.valkov@yahoo.com"
-                            onBlur={validateEmail}
+                            onBlur={(e) => validateEmail(e, setError)}
                         />
                     </p>
                     {error.errorEmailMsg && <div className="errors">{error.errorEmailMsg}</div>}
@@ -181,7 +95,7 @@ export const Form = () => {
                             name="password"
                             id="password"
                             placeholder="*****"
-                            onBlur={validatePassword}
+                            onBlur={(e) => validatePassword(e, setError)}
                         />
                     </p>
                     {error.errorPassMsg && <div className="errors">{error.errorPassMsg}</div>}
@@ -194,7 +108,7 @@ export const Form = () => {
                             name="age"
                             id="age"
                             placeholder="18"
-                            onBlur={validateAge}
+                            onBlur={(e) => validateAge(e, setError)}
                         />
                     </p>
                     {error.errorAgeMsg && <div className="errors">{error.errorAgeMsg}</div>}
@@ -221,7 +135,7 @@ export const Form = () => {
                             name="date"
                             id="date"
                             placeholder="date"
-                            onBlur={validateDate}
+                            onBlur={(e) => validateDate(e, setError)}
                         />
                     </p>
                     {error.errorDateMsg && <div className="errors">{error.errorDateMsg}</div>}
@@ -267,7 +181,7 @@ export const Form = () => {
                             id="tac"
                             checked={values.tac}
                             onChange={changeHandler}
-                            onBlur={validateTac}
+                            // onBlur={(e) => validateTac(e, setError)}
                         />
                     </p>
                     {error.errorTacMsg && <div className="errors">{error.errorTacMsg}</div>}

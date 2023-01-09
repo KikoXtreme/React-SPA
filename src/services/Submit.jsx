@@ -1,4 +1,4 @@
-const url = 'https://www.toptal.com/developers/postbin/1673253104326-4398864065296';
+const url = 'https://webhook.site/ee43433e-f646-4057-8cde-c75a788321dc';
 
 // export const submit = async (userData) => {
 //     const response = await fetch(url, {
@@ -14,16 +14,10 @@ const url = 'https://www.toptal.com/developers/postbin/1673253104326-43988640652
 //     return result;
 // }
 
-export const request = async (method, url, data) => {
+export const sendUserData = async (data) => {
     try {
-        let headers = {};
-
         let currentRequest = fetch(url, {
-            method,
-            headers: {
-                ...headers,
-                'content-type': 'application/json',
-            },
+            method: 'POST',
             body: JSON.stringify(data),
         });
 
@@ -35,9 +29,3 @@ export const request = async (method, url, data) => {
         console.log(error);
     }
 }
-
-const post = request.bind({}, 'POST');
-
-export const submit = (username, email, age, gender, userType, tac, date) => {
-    post(`${url}`, { username, email, age, gender, userType, tac, date })
-};

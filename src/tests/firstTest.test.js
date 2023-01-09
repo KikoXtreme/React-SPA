@@ -15,7 +15,6 @@ it('two plus two is four', () => {
     const root = ReactDOM.createRoot(document.createElement('p'));
     root.render(<Form text='Kiko' />)
 
-
     expect(2 + 2).toBe(4);
 });
 
