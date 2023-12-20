@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-spa/static/css/main.7ad4e2f6.css",
+    "main.js": "/react-spa/static/js/main.f57a6d7f.js",
+    "static/js/787.14fe134e.chunk.js": "/react-spa/static/js/787.14fe134e.chunk.js",
+    "static/media/milky-way.jpg": "/react-spa/static/media/milky-way.f3c04955b0530b255585.jpg",
+    "index.html": "/react-spa/index.html",
+    "main.7ad4e2f6.css.map": "/react-spa/static/css/main.7ad4e2f6.css.map",
+    "main.f57a6d7f.js.map": "/react-spa/static/js/main.f57a6d7f.js.map",
+    "787.14fe134e.chunk.js.map": "/react-spa/static/js/787.14fe134e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ad4e2f6.css",
+    "static/js/main.f57a6d7f.js"
+  ]
+}
