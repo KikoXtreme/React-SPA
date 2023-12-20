@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-spa/static/css/main.7ad4e2f6.css",
-    "main.js": "/react-spa/static/js/main.f57a6d7f.js",
-    "static/js/787.14fe134e.chunk.js": "/react-spa/static/js/787.14fe134e.chunk.js",
-    "static/media/milky-way.jpg": "/react-spa/static/media/milky-way.f3c04955b0530b255585.jpg",
-    "index.html": "/react-spa/index.html",
-    "main.7ad4e2f6.css.map": "/react-spa/static/css/main.7ad4e2f6.css.map",
-    "main.f57a6d7f.js.map": "/react-spa/static/js/main.f57a6d7f.js.map",
-    "787.14fe134e.chunk.js.map": "/react-spa/static/js/787.14fe134e.chunk.js.map"
+    "main.css": "/React-SPA/static/css/main.ac3a5ce0.css",
+    "main.js": "/React-SPA/static/js/main.7195cc98.js",
+    "static/js/787.14fe134e.chunk.js": "/React-SPA/static/js/787.14fe134e.chunk.js",
+    "static/media/milky-way.jpg": "/React-SPA/static/media/milky-way.f3c04955b0530b255585.jpg",
+    "index.html": "/React-SPA/index.html",
+    "main.ac3a5ce0.css.map": "/React-SPA/static/css/main.ac3a5ce0.css.map",
+    "main.7195cc98.js.map": "/React-SPA/static/js/main.7195cc98.js.map",
+    "787.14fe134e.chunk.js.map": "/React-SPA/static/js/787.14fe134e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ad4e2f6.css",
-    "static/js/main.f57a6d7f.js"
+    "static/css/main.ac3a5ce0.css",
+    "static/js/main.7195cc98.js"
   ]
 }
