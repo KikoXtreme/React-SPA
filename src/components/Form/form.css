@@ -108,6 +108,10 @@
     transform: scale(1.5);
 }
 
+.tac label{
+    margin-bottom: 0.5rem;
+}
+
 .fa-users {
     border-radius: 1.5em;
     border: 1px solid;

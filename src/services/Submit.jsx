@@ -1,4 +1,4 @@
-const url = 'https://webhook.site/ee43433e-f646-4057-8cde-c75a788321dc';
+const url = 'https://webhook.site/ee43433e-f646-4057-8cde-c75a788321dc'; // url provided for test purposes
 
 export const sendUserData = async (userData) => {
     try {

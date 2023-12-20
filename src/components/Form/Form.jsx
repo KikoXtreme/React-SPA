@@ -95,7 +95,7 @@ export const Form = () => {
                     {error.errorAgeMsg && <div className="errors">{error.errorAgeMsg}</div>}
 
                     <p className="field">
-                        <label htmlFor="gender"><span><i className="fa-solid fa-venus-mars"></i></span></label>
+                        <label htmlFor="gender"><span><i className="fa-solid fa-mars-and-venus"></i></span></label>
                         <select
                             className="null"
                             name="gender"
@@ -167,7 +167,7 @@ export const Form = () => {
                     </p>
 
                     <p className="field tac">
-                        <label htmlFor="tac">React Test Validation Form Terms and Conditions:</label>
+                        <label htmlFor="tac">Validation Form Terms and Conditions:</label>
                         <input
                             type="checkbox"
                             name="tac"
@@ -178,7 +178,9 @@ export const Form = () => {
                     </p>
                     {error.errorTacMsg && <div className="errors">{error.errorTacMsg}</div>}
 
-                    <button type='submit' disabled={!values.tac}>Submit Form</button>
+                    <button type='submit' disabled={!values.tac} title={!values.tac ? "Please check Terms and Conditions" : ""}>
+                        Submit Form
+                    </button>
                 </div>
             </form>
         </section>
