@@ -1,9 +1,9 @@
-# React SPA
+# React SPA Form
 
-## React SPA Form
+## React Test Validation Form Fields
 
 This is a Single Page Application (SPA) project. \
-The project is one page and contains HTML input fields. \
+The project is one page and contains most common HTML input fields. \
 All fields have to be validated in order to be sent to a post bin service.
 
 ## Form Inputs
@@ -39,7 +39,7 @@ Checkbox - Is you don't check the field, the Submit button is disabled and you c
 ## Submition
 
 The submition was sent to post bin service: Webhook.site \
-Url: https://webhook.site/ee43433e-f646-4057-8cde-c75a788321dc
+Test Url: https://webhook.site/ee43433e-f646-4057-8cde-c75a788321dc
 
 ## Create React App and Available Scripts
 
