@@ -30,8 +30,9 @@ export const Form = () => {
 
         await sendUserData(userData)
             .then(result => {
-                setUser(result)
-                console.log(result)
+                setUser(result);
+                console.log(result);
+                console.log(user);
             })
     }
 
@@ -39,7 +40,7 @@ export const Form = () => {
         <section id="form-page">
             <form className="form" onSubmit={onSubmit}>
                 <div className="container">
-                    <h1>React SPA Form</h1>
+                    <h1>React Test Validation Form Fields</h1>
 
                     <p className="field">
                         <label htmlFor="username"><span><i className="fas fa-user-astronaut"></i></span></label>
@@ -143,7 +144,7 @@ export const Form = () => {
                         />
                     </p>
 
-                    <p className="field">
+                    <p className="field radio">
                         <label htmlFor="user-user-type">Logged User</label>
                         <input
                             type="radio"
@@ -165,8 +166,8 @@ export const Form = () => {
                         />
                     </p>
 
-                    <p className="field">
-                        <label htmlFor="tac">React SPA Form Terms and Conditions:</label>
+                    <p className="field tac">
+                        <label htmlFor="tac">React Test Validation Form Terms and Conditions:</label>
                         <input
                             type="checkbox"
                             name="tac"
