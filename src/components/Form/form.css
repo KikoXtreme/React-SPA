@@ -20,12 +20,24 @@
 @media only screen and (max-width: 575px) {
     .form {
         width: 80%;
-        margin: 1rem auto;
+        margin: 0.4rem auto;
     }
 
     .form h1 {
         margin: 0.2rem;
         font-size: 18px;
+    }
+
+    .radio {
+        margin: 0.5rem auto;
+    }
+
+    .field.tac {
+        margin-top: 0.5rem;
+    }
+
+    .tac label {
+        font-size: 15px;
     }
 }
 
