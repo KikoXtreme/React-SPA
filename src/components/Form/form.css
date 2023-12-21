@@ -14,12 +14,24 @@
     padding-top: 0;
     border-bottom: none;
     font-weight: 400;
-    margin: 1rem;
+    margin: 0.5rem;
+}
+
+@media only screen and (max-width: 575px) {
+    .form {
+        width: 80%;
+        margin: 1rem auto;
+    }
+
+    .form h1 {
+        margin: 0.2rem;
+        font-size: 18px;
+    }
 }
 
 .form p {
     padding-bottom: 0;
-    padding-top: 0.6rem;
+    padding-top: 0.2rem;
 }
 
 .form input {
@@ -46,7 +58,6 @@
     border: none;
     border-radius: 1.5rem;
     padding: 0.6rem 1.2rem;
-    margin-top: 0.2rem;
     width: 60%;
     outline: none;
     background: linear-gradient(15deg, rgb(12, 0, 182) 0%, rgb(61, 127, 156) 50%, rgb(1, 17, 20) 100%);
@@ -91,7 +102,7 @@
     padding-bottom: 0;
 }
 
-.radio input{
+.radio input {
     flex: 1;
     margin: 0 auto;
 }
@@ -108,7 +119,7 @@
     transform: scale(1.5);
 }
 
-.tac label{
+.tac label {
     margin-bottom: 0.5rem;
 }
 
@@ -125,6 +136,9 @@
     border-radius: 0.3em;
     color: red;
     padding-top: 0;
+    font-size: 14px;
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
 }
 
 #form-page .input-error {
